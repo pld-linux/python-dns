@@ -12,7 +12,6 @@ Source0:	http://www.dnspython.org/kits/stable/dnspython-%{version}.tar.gz
 # Source0-md5:	e8162af569649032d80e68b7cce9008b
 URL:		http://www.dnspython.org/
 BuildRequires:	python-devel >= 1:2.3
-BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
