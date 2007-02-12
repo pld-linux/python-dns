@@ -2,7 +2,7 @@
 %define		module	dns
 
 Summary:	dnspython - a DNS toolkit for Python
-Summary(pl):	dnspython - zestaw narzêdzi do DNS dla Pythona
+Summary(pl.UTF-8):   dnspython - zestaw narzÄ™dzi do DNS dla Pythona
 Name:		python-%{module}
 Version:	1.4.0
 Release:	1
@@ -26,16 +26,16 @@ level classes perform queries for data of a given name, type, and
 class, and return an answer set. The low level classes allow direct
 manipulation of DNS zones, messages, names, and records.
 
-%description -l pl
-dnspython to zestaw narzêdzi do DNS dla Pythona. Obs³uguje prawie
-wszystkie rodzaje rekordów. Mo¿e byæ u¿ywany do zapytañ, transferów
-stref oraz dynamicznych uaktualnieñ. Obs³uguje uwierzytelnione
+%description -l pl.UTF-8
+dnspython to zestaw narzÄ™dzi do DNS dla Pythona. ObsÅ‚uguje prawie
+wszystkie rodzaje rekordÃ³w. MoÅ¼e byÄ‡ uÅ¼ywany do zapytaÅ„, transferÃ³w
+stref oraz dynamicznych uaktualnieÅ„. ObsÅ‚uguje uwierzytelnione
 komunikaty TSIG oraz EDNS0.
 
-dnspython dostarcza zarówno wysoko- jak i niskopoziomowy dostêp do
-DNS-a. Klasy wysokopoziomowe wykonuj± zapytania o dane dla podanej
-nazwy, rodzaju i klasy, a zwracaj± zbiór odpowiedzi. Klasy
-niskopoziomowe umo¿liwiaj± bezpo¶rednie manipulacje na strefach,
+dnspython dostarcza zarÃ³wno wysoko- jak i niskopoziomowy dostÄ™p do
+DNS-a. Klasy wysokopoziomowe wykonujÄ… zapytania o dane dla podanej
+nazwy, rodzaju i klasy, a zwracajÄ… zbiÃ³r odpowiedzi. Klasy
+niskopoziomowe umoÅ¼liwiajÄ… bezpoÅ›rednie manipulacje na strefach,
 komunikatach, nazwach i rekordach w DNS-ie.
 
 %prep
