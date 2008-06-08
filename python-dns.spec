@@ -4,12 +4,12 @@
 Summary:	dnspython - a DNS toolkit for Python
 Summary(pl.UTF-8):	dnspython - zestaw narzędzi do DNS dla Pythona
 Name:		python-%{module}
-Version:	1.4.0
+Version:	1.6.0
 Release:	1
 License:	distributable
 Group:		Development/Languages/Python
-Source0:	http://www.dnspython.org/kits/stable/dnspython-%{version}.tar.gz
-# Source0-md5:	7f7e58379235b2b626620a7bda810270
+Source0:	http://www.dnspython.org/kits/%{version}/dnspython-%{version}.tar.gz
+# Source0-md5:	15b8eed42689bd719ec1878a584787ea
 URL:		http://www.dnspython.org/
 BuildRequires:	python-devel >= 1:2.3
 %pyrequires_eq	python-modules
@@ -63,5 +63,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc LICENSE ChangeLog README TODO
 %{py_sitescriptdir}/%{module}
+%{py_sitescriptdir}/*.egg-info
 %dir %{_examplesdir}/%{name}-%{version}
 %{_examplesdir}/%{name}-%{version}/*
