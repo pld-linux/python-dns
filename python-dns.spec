@@ -4,15 +4,16 @@
 Summary:	dnspython - a DNS toolkit for Python
 Summary(pl.UTF-8):	dnspython - zestaw narzędzi do DNS dla Pythona
 Name:		python-%{module}
-Version:	1.6.0
-Release:	4
-License:	distributable
+Version:	1.9.2
+Release:	1
+License:	MIT
 Group:		Development/Languages/Python
 Source0:	http://www.dnspython.org/kits/%{version}/dnspython-%{version}.tar.gz
-# Source0-md5:	15b8eed42689bd719ec1878a584787ea
+# Source0-md5:	26426043e619d34b47c7c30dc0a02f1c
 URL:		http://www.dnspython.org/
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -43,7 +44,7 @@ komunikatach, nazwach i rekordach w DNS-ie.
 %setup -q -n dnspython-%{version}
 
 %build
-python setup.py build
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -51,19 +52,18 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 cp -r examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-python setup.py install \
+%{__python} setup.py install \
 	--root=$RPM_BUILD_ROOT \
 	--optimize=2
 
-find $RPM_BUILD_ROOT%{py_sitescriptdir} -name "*.py" | xargs rm
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc LICENSE ChangeLog README TODO
+%doc ChangeLog LICENSE README TODO
 %{py_sitescriptdir}/%{module}
 %{py_sitescriptdir}/*.egg-info
-%dir %{_examplesdir}/%{name}-%{version}
-%{_examplesdir}/%{name}-%{version}/*
+%{_examplesdir}/%{name}-%{version}
