@@ -1,3 +1,4 @@
+# NOTE: python3 version in separate package (python3-dns)
 
 %define		module	dns
 
