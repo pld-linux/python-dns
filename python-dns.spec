@@ -5,12 +5,12 @@
 Summary:	dnspython - a DNS toolkit for Python
 Summary(pl.UTF-8):	dnspython - zestaw narzędzi do DNS dla Pythona
 Name:		python-%{module}
-Version:	1.11.1
-Release:	3
+Version:	1.12.0
+Release:	1
 License:	MIT
 Group:		Development/Languages/Python
 Source0:	http://www.dnspython.org/kits/%{version}/dnspython-%{version}.tar.gz
-# Source0-md5:	6167344ca849bd2ba108a8aa6118cb2b
+# Source0-md5:	3f2601ef3c8b77fc6d21a9c77a81efeb
 URL:		http://www.dnspython.org/
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	rpm-pythonprov
@@ -51,11 +51,11 @@ komunikatach, nazwach i rekordach w DNS-ie.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-cp -r examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-
 %py_install
 
 %py_postclean
+
+cp -pr examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -63,6 +63,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog LICENSE README
-%{py_sitescriptdir}/%{module}
-%{py_sitescriptdir}/*.egg-info
+%{py_sitescriptdir}/dns
+%{py_sitescriptdir}/dnspython-%{version}-py*.egg-info
 %{_examplesdir}/%{name}-%{version}
