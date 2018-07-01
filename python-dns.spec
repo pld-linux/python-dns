@@ -8,7 +8,7 @@ Summary:	dnspython - a DNS toolkit for Python 2
 Summary(pl.UTF-8):	dnspython - zestaw narzędzi do DNS dla Pythona 2
 Name:		python-%{module}
 Version:	1.15.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Languages/Python
 Source0:	http://www.dnspython.org/kits/%{version}/dnspython-%{version}.tar.gz
