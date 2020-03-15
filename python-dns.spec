@@ -8,7 +8,7 @@ Summary:	dnspython - a DNS toolkit for Python 2
 Summary(pl.UTF-8):	dnspython - zestaw narzędzi do DNS dla Pythona 2
 Name:		python-%{module}
 Version:	1.16.0
-Release:	3
+Release:	4
 License:	MIT
 Group:		Development/Languages/Python
 Source0:	http://www.dnspython.org/kits/%{version}/dnspython-%{version}.tar.gz
@@ -100,6 +100,9 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -pr examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+
+sed -E -i -e '1s,#!\s*/usr/bin/env\s+python(\s|$),#!%{__python}\1,' -e '1s,#!\s*/usr/bin/env\s+python3(\s|$),#!%{__python}\1,' \
+      $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/*.py
 %endif
 
 %if %{with python3}
@@ -107,6 +110,9 @@ cp -pr examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/python3-%{module}-%{version}
 cp -pr examples/* $RPM_BUILD_ROOT%{_examplesdir}/python3-%{module}-%{version}
+
+sed -E -i -e '1s,#!\s*/usr/bin/env\s+python(\s|$),#!%{__python3}\1,' -e '1s,#!\s*/usr/bin/env\s+python3(\s|$),#!%{__python3}\1,' \
+      $RPM_BUILD_ROOT%{_examplesdir}/python3-%{module}-%{version}/*.py
 %endif
 
 %clean
