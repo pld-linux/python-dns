@@ -6,9 +6,9 @@ Version:	1.16.0
 Release:	6
 License:	MIT
 Group:		Development/Languages/Python
-Source0:	http://www.dnspython.org/kits/%{version}/dnspython-%{version}.tar.gz
+Source0:	https://www.dnspython.org/kits/%{version}/dnspython-%{version}.tar.gz
 # Source0-md5:	5691e0fbb280ed4eaf182ebedccf3462
-URL:		http://www.dnspython.org/
+URL:		https://www.dnspython.org/
 BuildRequires:	python-devel >= 1:2.6
 BuildRequires:	python-setuptools
 BuildRequires:	rpm-pythonprov
